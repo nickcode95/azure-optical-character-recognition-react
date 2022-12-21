@@ -67,9 +67,7 @@ useEffect(()=> {
         const textOutput = textArray.map(item => item.text) //returns an array
         // Use the join method to get rid of the commas in the array so it returns a string
         const textOutputString = textOutput.join(' ')
-        setGetText(textOutputString)
-
-        
+        setGetText(textOutputString)    
       })
       .catch(err => {
         console.log(err)
