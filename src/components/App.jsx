@@ -8,7 +8,7 @@ function App() {
   const [getText, setGetText] = useState('');
 
 // We make a POST request to this URL
-  let url = "https://imagetotextreact.cognitiveservices.azure.com/vision/v3.2/read/analyze";
+  let url = "https://ai-102-learning.cognitiveservices.azure.com//vision/v3.2/read/analyze";
   // Options for POST request
   const options = {
     // Change the image url to any you like that has text
