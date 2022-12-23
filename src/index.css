@@ -68,3 +68,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.image-input {
+  width: 50%;
+ margin: 0 200%;
+}
