@@ -2,10 +2,11 @@ import {React, useState} from 'react'
 import Api from './Api';
 
 export default function Homepage(props){
-    let isClicked = true;
+    const [isClicked, setIsClicked] = useState(false)
+ 
 
-    const [input, setInput] = useState();
-    const [text, setText] = useState()
+    const [input, setInput] = useState('');
+    const [text, setText] = useState('')
 
     function handleChange (e) {
         setInput(e.target.value)
@@ -13,13 +14,15 @@ export default function Homepage(props){
 
     function handleClick(){
         setText(input)
-        isClicked = true;
+
+        setIsClicked(true);
+
     }
     
-            {if (isClicked === true){
+            {if (isClicked == true){
                 return (
                     <div>
-                         <Api/>
+                         <Api UserUrl={text}/>
                     </div>
                    
                 )
