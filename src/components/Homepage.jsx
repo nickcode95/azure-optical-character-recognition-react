@@ -3,8 +3,6 @@ import Api from './Api';
 
 export default function Homepage(props){
     const [isClicked, setIsClicked] = useState(false)
- 
-
     const [input, setInput] = useState('');
     const [text, setText] = useState('')
 
@@ -14,17 +12,14 @@ export default function Homepage(props){
 
     function handleClick(){
         setText(input)
-
         setIsClicked(true);
 
-    }
-    
+    } 
             {if (isClicked == true){
                 return (
                     <div>
                          <Api UserUrl={text}/>
-                    </div>
-                   
+                    </div>             
                 )
             } else {
                 return (
@@ -35,6 +30,4 @@ export default function Homepage(props){
                         )
             }
             }
-        
-    
 }
