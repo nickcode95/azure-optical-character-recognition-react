@@ -1,6 +1,11 @@
 import { React, useState, useEffect } from 'react';
 
 export default function Api(props) {
+  function convertAgain() {
+    operationLocation = null;
+    location.reload()
+  }
+
   let operationLocation;
 
   // We will add the text from the image to this variable
@@ -51,11 +56,11 @@ export default function Api(props) {
     const fetchData = async () => {
       setLoading(true)
 
-        fetch(url, options)
-          // Setting the operation location value from the header
-          .then((res) => {       
-            return operationLocation = (res.headers.get('operation-location'))     
-          })
+      fetch(url, options)
+        // Setting the operation location value from the header
+        .then((res) => {
+          return operationLocation = (res.headers.get('operation-location'))
+        })
 
     }
 
@@ -88,13 +93,11 @@ export default function Api(props) {
     }
     // Asyncrhonously make the requests. We need to wait for response from the POST request before we execute the GET request
     async function callApi() {
-        fetchData()
-      console.log('post request successful')
+      fetchData()
       // Need to wait for read response before we call the GET request
-      setTimeout(()=> {
+      setTimeout(() => {
         getData()
-    }, 2000)
-      console.log('get request succesful')
+      }, 2000)
 
     }
     callApi();
@@ -104,16 +107,24 @@ export default function Api(props) {
   // We check to see if the request has populate state and then we render the response
   if (loading) {
     return (
-      <div>
-        Loading...
+      <div className='center'>
+        <p className="center"> Loading...</p>
 
       </div>
     )
   } else {
     return (
-      <div className="center">
+      <div className="render">
+        <div classname='yourText'>
+          <h2 className="center">Your text</h2>
+        </div>
         <p>{getText}</p>
+        <h2>Your url</h2>
         <p>{props.UserUrl}</p>
+        <div>
+          <button onClick={props.onClick}>Convert another image</button>
+        </div>
+
       </div>
     )
   }

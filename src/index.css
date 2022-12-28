@@ -3,11 +3,9 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,8 +26,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+
 }
 
 h1 {
@@ -41,10 +38,11 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
+  margin-top: 1em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #26272b;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -69,7 +67,27 @@ button:focus-visible {
   }
 }
 
+.title {
+  text-align: center;
+  margin-top: 10%;
+  width: 90vw;
+}
+
 .image-input {
   width: 50%;
- margin: 0 200%;
+ margin: 10% 25% 0;
+}
+
+.render {
+width: 80vw;
+padding: 0 10vw  ;
+}
+
+.center {
+  width: 80vw;
+  text-align: center;
+}
+
+.yourText {
+ margin-top: 10vw;
 }
